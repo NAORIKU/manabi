@@ -6,6 +6,7 @@
   "scripts": {
     "production": "BUILD_DATE=`date '+%Y-%m-%dT%H:%M:%S%z'` wrangler build --env=production",
     "dev": "BUILD_DATE=`date '+%Y-%m-%dT%H:%M:%S%z'` wrangler preview --watch",
+    "local": "BUILD_DATE=`date '+%Y-%m-%dT%H:%M:%S%z'` wrangler dev",
     "build": "webpack",
     "clean": "rimraf dist worker",
     "format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",

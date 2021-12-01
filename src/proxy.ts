@@ -11,6 +11,8 @@ export async function handleRequest(
   if (cache) {
     console.log("Cache Hit!", cacheKey);
     return cache; // use cache
+  } else {
+    console.log("No Cache Hit...", cacheKey);
   }
   return new Response(`request uri on: ${uri}, cacheKey: ${cacheKey}`);
 }
