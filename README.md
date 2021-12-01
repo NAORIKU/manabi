@@ -2,6 +2,12 @@
 
 Today I Learned for my children.
 
+## Credits
+
+Based on [waka.dev](https://waka.dev). :bow:
+
+----
+
 ## Note: You must use [wrangler](https://developers.cloudflare.com/workers/cli-wrangler/install-update) 1.17 or newer to use this template.
 
 ## 🔋 Getting Started
@@ -16,7 +22,7 @@ $ wrangler generate my-ts-project https://github.com/cloudflare/worker-typescrip
 
 ### 👩 💻 Developing
 
-[`src/index.ts`](./src/index.ts) calls the request handler in [`src/handler.ts`](./src/handler.ts), and will return the [request method](https://developer.mozilla.org/en-US/docs/Web/API/Request/method) for the given request.
+[`src/index.ts`](./src/index.ts) calls the request handler in [`src/proxy.ts`](./src/proxy.ts), and will return the [request method](https://developer.mozilla.org/en-US/docs/Web/API/Request/method) for the given request.
 
 ```bash
 $ wrangler dev

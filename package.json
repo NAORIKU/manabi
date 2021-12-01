@@ -1,16 +1,19 @@
 {
-  "name": "worker-typescript-template",
+  "name": "manabi",
   "version": "1.0.0",
   "description": "Cloudflare worker TypeScript template",
   "main": "dist/worker.js",
   "scripts": {
+    "production": "BUILD_DATE=`date '+%Y-%m-%dT%H:%M:%S%z'` wrangler build --env=production",
+    "dev": "BUILD_DATE=`date '+%Y-%m-%dT%H:%M:%S%z'` wrangler preview --watch",
     "build": "webpack",
+    "clean": "rimraf dist worker",
     "format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
     "lint": "eslint --max-warnings=0 src && prettier --check '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
     "test": "jest --config jestconfig.json --verbose"
   },
-  "author": "author",
-  "license": "MIT OR Apache-2.0",
+  "author": "NAORIKU",
+  "license": "MIT",
   "eslintConfig": {
     "root": true,
     "extends": [
@@ -24,6 +27,7 @@
     "@types/service-worker-mock": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
+    "@types/node": "^16.11.11",
     "eslint": "^7.21.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-config-typescript": "^3.0.0",
