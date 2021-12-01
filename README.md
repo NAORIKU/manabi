@@ -1,6 +1,6 @@
-# ʕ •́؈•̀) `worker-typescript-template`
+# manabi
 
-A batteries included template for kick starting a TypeScript Cloudflare worker project.
+Today I Learned for my children.
 
 ## Note: You must use [wrangler](https://developers.cloudflare.com/workers/cli-wrangler/install-update) 1.17 or newer to use this template.
 
@@ -11,12 +11,18 @@ This template is meant to be used with [Wrangler](https://github.com/cloudflare/
 To generate using Wrangler, run this command:
 
 ```bash
-wrangler generate my-ts-project https://github.com/cloudflare/worker-typescript-template
+$ wrangler generate my-ts-project https://github.com/cloudflare/worker-typescript-template
 ```
 
 ### 👩 💻 Developing
 
 [`src/index.ts`](./src/index.ts) calls the request handler in [`src/handler.ts`](./src/handler.ts), and will return the [request method](https://developer.mozilla.org/en-US/docs/Web/API/Request/method) for the given request.
+
+```bash
+$ wrangler dev
+webpack 5.38.1 compiled successfully in 1647 ms
+👂  Listening on http://127.0.0.1:8787
+```
 
 ### 🧪 Testing
 
