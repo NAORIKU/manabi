@@ -12,3 +12,8 @@ compatibility_date = "2021-11-30"
 command = "npm install && npm run build"
 [build.upload]
 format = "service-worker"
+
+[env.dev]
+name = "manabi-dev"
+[env.production]
+name = "manabi"
