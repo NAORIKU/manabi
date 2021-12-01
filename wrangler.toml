@@ -1,4 +1,4 @@
-name = "manabi"
+name = "manabi-local"
 type = "javascript"
 # The ID of the domain to deploying to
 zone_id = ""
