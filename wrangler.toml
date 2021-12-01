@@ -1,0 +1,14 @@
+name = "manabi"
+type = "javascript"
+# The ID of the domain to deploying to
+zone_id = ""
+account_id = "aae2fcb83b85225f854e7fc4c1620a25"
+# The route pattern your Workers application will be served at
+route = ""
+workers_dev = true
+compatibility_date = "2021-11-30"
+
+[build]
+command = "npm install && npm run build"
+[build.upload]
+format = "service-worker"

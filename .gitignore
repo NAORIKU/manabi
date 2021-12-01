@@ -1,1 +1,5 @@
 .idea
+.cargo-ok
+dist/
+worker/
+node_modules/
