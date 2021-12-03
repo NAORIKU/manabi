@@ -6,3 +6,9 @@ export interface Site {
 export interface Config {
   site: Site;
 }
+
+export type ResponseInfo = {
+  contentType: string;
+  response: string;
+  status: number;
+};

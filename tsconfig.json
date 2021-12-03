@@ -3,6 +3,7 @@
     "outDir": "./dist",
     "module": "commonjs",
     "target": "esnext",
+    "jsx": "react",
     "lib": ["esnext"],
     "alwaysStrict": true,
     "strict": true,
@@ -12,6 +13,8 @@
     "esModuleInterop": true,
     "types": [
       "@types/node",
+      "@types/react",
+      "@types/react-dom",
       "@cloudflare/workers-types",
       "@types/jest",
       "@types/service-worker-mock"
