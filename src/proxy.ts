@@ -14,7 +14,7 @@ export async function handleRequest(
     return cache; // use cache
   }
   try {
-    console.log("No Cache Hit...", cacheKey)
+    console.log("No Cache Hit...", cacheKey);
     const { status, contentType, response } = await handleOriginRequest(
       pathname,
       config

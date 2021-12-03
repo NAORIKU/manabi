@@ -1,8 +1,10 @@
+import path from "path";
 import { Config, ResponseInfo } from "./types";
 import { NotFoundError } from "./errors";
-import { renderIndex } from "./pages/index";
+import { renderTop } from "./pages/top";
+import { renderEntry } from "./pages/entry/[id]";
 
-type RenderType = "index" | "";
+type RenderType = "index" | "entry" | "";
 
 /**
  * Return text and status for response.
@@ -16,10 +18,24 @@ const handleRequest = async (
 
   try {
     switch (getRenderType(pathname)) {
+      //
+      //
       case "index":
         contentType = "text/html";
-        response = await renderIndex(config);
+        response = await renderTop(config);
         break;
+      //
+      //
+      case "entry":
+        contentType = "text/html";
+        const issueId = Number(path.basename(pathname));
+        if (Number.isNaN(issueId)) {
+          throw new NotFoundError(`IssueId: ${pathname} is not found`);
+        }
+        response = await renderEntry(issueId, config);
+        break;
+      //
+      //
       default:
         throw new NotFoundError();
     }
@@ -35,6 +51,9 @@ const handleRequest = async (
 const getRenderType = (pathname: string): RenderType => {
   if (pathname === "/") {
     return "index";
+  }
+  if (pathname.startsWith("/entry")) {
+    return "entry";
   }
   return "";
 };
