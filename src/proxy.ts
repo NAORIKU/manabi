@@ -15,6 +15,7 @@ export async function handleRequest(
   }
   try {
     console.log("No Cache Hit...", cacheKey);
+    console.log("GITHUB_TOKEN is", process.env.GITHUB_TOKEN)
     const { status, contentType, response } = await handleOriginRequest(
       pathname,
       config
