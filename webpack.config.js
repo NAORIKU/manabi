@@ -28,6 +28,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       "process.env.BUILD_DATE": JSON.stringify(process.env.BUILD_DATE),
+      "process.env.GITHUB_TOKEN": JSON.stringify(process.env.GITHUB_TOKEN),
     }),
   ],
 };

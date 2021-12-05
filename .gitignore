@@ -1,5 +1,6 @@
 .idea
 .cargo-ok
+.env.local
 dist/
 worker/
 node_modules/

@@ -6,10 +6,20 @@ const getConfig = (): Config => {
   if (!lastBuildDate) {
     throw new Error("BUILD_DATE must be required.");
   }
+  const accessToken = process.env.GITHUB_TOKEN;
+  if (!accessToken) {
+    throw new Error("GITHUB_TOKEN must be required.");
+  }
   return {
     site: {
       title: "manabi",
       lastBuildDate,
+    },
+    github: {
+      accessToken,
+      repository: "NAORIKU/manabi",
+      author: "NAORIKU",
+      label: "public",
     },
   };
 };
@@ -18,7 +28,7 @@ const getResponse = async (request: Request): Promise<Response> => {
   try {
     const config = getConfig();
     return handleRequest(request.url, config);
-  } catch (e) {
+  } catch (e: any) {
     // FIXME: Render Error Styling Pages
     return new Response(e.message, {
       status: 500,
