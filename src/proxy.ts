@@ -21,6 +21,8 @@ export async function handleRequest(
     );
     // put cache if contents exists
     if (status === 200) {
+      console.log("Response -> ", response);
+      console.log("contentType -> ", contentType);
       const actualResponse = new Response(response, {
         status,
         headers: { "content-type": contentType },
