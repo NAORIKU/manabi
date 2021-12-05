@@ -16,4 +16,4 @@ name = "manabi-dev"
 [env.production]
 zone_id = "72d8a4ba2d528bc3300227072b3c0816"
 name = "manabi"
-route = "*naoriku.dev/*"
+route = "manabi.naoriku.dev/*"
