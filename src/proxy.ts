@@ -5,11 +5,14 @@ export async function handleRequest(
   uri: string,
   config: Config
 ): Promise<Response> {
-  const currentCaches = await caches.open(config.site.lastBuildDate);
+  const currentCaches = caches.default
   const { protocol, hostname, pathname } = new URL(uri);
-  const cacheKey = `${protocol}//${hostname}${pathname}`;
+  const cacheKey = `custom:cache` // `${protocol}//${hostname}${pathname}`;
+  // const cacheKey = `${protocol}//${hostname}${pathname}`;
+  // const cacheKey = `custom:${hostname}${pathname}`;
   const cache = await currentCaches.match(cacheKey);
-
+  console.log("cache -> ", cache);
+  
   if (cache) {
     console.log("Cache Hit!", cacheKey);
     return cache; // use cache
