@@ -7,7 +7,7 @@ export async function handleRequest(
 ): Promise<Response> {
   const currentCaches = await caches.open(config.site.lastBuildDate);
   const { protocol, hostname, pathname } = new URL(uri);
-  const cacheKey = `${protocol}//${hostname}${pathname}`;
+  const cacheKey = `HAKASHUN` || `${protocol}//${hostname}${pathname}`;
   const cache = await currentCaches.match(cacheKey);
 
   if (cache) {
@@ -29,10 +29,9 @@ export async function handleRequest(
         status,
         headers: { "content-type": contentType },
       });
-      actualResponse.headers.append("Cache-Control", "s-maxage=10")
       // Avoid Error: "Body has already been used. It can only be used once. Use tee() first if you need to read it twice."
-      console.log("Create Cache...", config.site.lastBuildDate,cacheKey,actualResponse.clone());
-      await currentCaches.put(cacheKey, actualResponse.clone());
+      console.log("Create Cache...", config.site.lastBuildDate, cacheKey);
+      await currentCaches.put(cacheKey, new Response(response, actualResponse));
       console.log("Was the cache really created?", await currentCaches.match(cacheKey))
       return actualResponse;
     }
