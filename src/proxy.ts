@@ -5,7 +5,7 @@ export async function handleRequest(
   request: Request,
   config: Config
 ): Promise<Response> {
-  const currentCaches = caches.default
+  const currentCaches = await caches.open(config.site.lastBuildDate);
   const { protocol, hostname, pathname } = new URL(request.url);
   const cacheUrl = new URL(`${protocol}//${hostname}${pathname}`);
   const cacheKey = new Request(cacheUrl.toString(), request)
