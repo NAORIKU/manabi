@@ -17,3 +17,4 @@ format = "service-worker"
 name = "manabi-dev"
 [env.production]
 name = "manabi"
+route = "*naoriku.dev/*"
