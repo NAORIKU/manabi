@@ -9,10 +9,12 @@ export async function handleRequest(
   const { protocol, hostname, pathname } = new URL(uri);
   const cacheKey = `${protocol}//${hostname}${pathname}`;
   const cache = await currentCaches.match(cacheKey);
+
   if (cache) {
     console.log("Cache Hit!", cacheKey);
     return cache; // use cache
   }
+
   try {
     console.log("No Cache Hit...", cacheKey);
     const { status, contentType, response } = await handleOriginRequest(
@@ -30,6 +32,7 @@ export async function handleRequest(
       // Avoid Error: "Body has already been used. It can only be used once. Use tee() first if you need to read it twice."
       console.log("Create Cache...", config.site.lastBuildDate,cacheKey,actualResponse.clone());
       await currentCaches.put(cacheKey, actualResponse.clone());
+      console.log("Was the cache really created?", await currentCaches.match(cacheKey))
       return actualResponse;
     }
     return new Response(response, {
