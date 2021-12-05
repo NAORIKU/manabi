@@ -2,17 +2,16 @@ import { handleRequest as handleOriginRequest } from "./router";
 import { Config } from "./types";
 
 export async function handleRequest(
-  uri: string,
+  request: Request,
   config: Config
 ): Promise<Response> {
   const currentCaches = caches.default
-  const { protocol, hostname, pathname } = new URL(uri);
-  const cacheKey = `custom:cache` // `${protocol}//${hostname}${pathname}`;
-  // const cacheKey = `${protocol}//${hostname}${pathname}`;
-  // const cacheKey = `custom:${hostname}${pathname}`;
+  const { protocol, hostname, pathname } = new URL(request.url);
+  const cacheUrl = new URL(`${protocol}//${hostname}${pathname}`);
+  const cacheKey = new Request(cacheUrl.toString(), request)
   const cache = await currentCaches.match(cacheKey);
   console.log("cache -> ", cache);
-  
+
   if (cache) {
     console.log("Cache Hit!", cacheKey);
     return cache; // use cache

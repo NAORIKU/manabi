@@ -27,7 +27,7 @@ const getConfig = (): Config => {
 const getResponse = async (request: Request): Promise<Response> => {
   try {
     const config = getConfig();
-    return handleRequest(request.url, config);
+    return handleRequest(request, config);
   } catch (e: any) {
     // FIXME: Render Error Styling Pages
     return new Response(e.message, {
