@@ -26,6 +26,7 @@ export async function handleRequest(
         headers: { "content-type": contentType },
       });
       // Avoid Error: "Body has already been used. It can only be used once. Use tee() first if you need to read it twice."
+      console.log("Create Cache...", config.site.lastBuildDate,cacheKey,actualResponse.clone());
       await currentCaches.put(cacheKey, actualResponse.clone());
       return actualResponse;
     }
