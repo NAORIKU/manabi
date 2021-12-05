@@ -7,7 +7,7 @@ export async function handleRequest(
 ): Promise<Response> {
   const currentCaches = await caches.open(config.site.lastBuildDate);
   const { protocol, hostname, pathname } = new URL(uri);
-  const cacheKey = `HAKASHUN` || `${protocol}//${hostname}${pathname}`;
+  const cacheKey = `${protocol}//${hostname}${pathname}`;
   const cache = await currentCaches.match(cacheKey);
 
   if (cache) {
