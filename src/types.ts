@@ -44,6 +44,12 @@ export interface IssuesResponse {
   };
 }
 
+export interface IssueResponse {
+  repository: {
+    issue: IssueNode;
+  };
+}
+
 export interface PageInfo {
   endCursor: string | null;
   hasNextPage: boolean;

@@ -1,5 +1,13 @@
 import React from "react";
+import {Issue} from "../domains/issue";
 
-export default function () {
-    return <h1>Issue Entry</h1>
+type Props = {
+    issue: Issue;
+};
+export default function ({issue}: Props) {
+    const html = { __html: issue.bodyHTML };
+    return <div>
+        <h1><a href={`/entry/${issue.id}`}>{issue.title}</a></h1>
+        <article dangerouslySetInnerHTML={html} />
+    </div>
 }
