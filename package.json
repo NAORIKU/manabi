@@ -7,7 +7,7 @@
     "production": "BUILD_DATE=`date '+%Y-%m-%dT%H:%M:%S%z'` wrangler build --env=production",
     "dev": "BUILD_DATE=`date '+%Y-%m-%dT%H:%M:%S%z'` wrangler preview --watch",
     "local": "BUILD_DATE=`date '+%Y-%m-%dT%H:%M:%S%z'` wrangler dev",
-    "build:css": "tailwindcss -o ./src/styles/tailwind.css",
+    "build:css": "tailwindcss -o ./src/styles/tailwind.css --minify",
     "build": "npm run build:css && webpack",
     "clean": "rimraf dist worker",
     "format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",

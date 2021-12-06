@@ -15,7 +15,7 @@ export default function ({ issues, site }: Props) {
             <h3>
                 <a href={`/entry/${issue.id}`}>{issue.title}</a>
             </h3>
-            <p>{issue.bodyText}</p>
+            <p className="mt-[22px]">{issue.bodyText}</p>
         </div>)}
     </div>
 }
