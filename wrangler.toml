@@ -6,6 +6,7 @@ compatibility_date = "2021-11-30"
 
 [build]
 command = "npm install && npm run build"
+watch_dir = "src"
 [build.upload]
 format = "service-worker"
 

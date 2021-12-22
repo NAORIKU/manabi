@@ -1,5 +1,5 @@
 import { Config, Site } from "../types";
-const css = require("../styles/tailwind.css").toString();
+const css = require("../../styles/tailwind.css").toString();
 
 interface ToHTMLParams {
   site: Site;
