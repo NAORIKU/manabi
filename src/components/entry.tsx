@@ -6,7 +6,7 @@ type Props = {
 };
 export default function ({issue}: Props) {
     const html = { __html: issue.bodyHTML };
-    return (<div className="max-w-[620px] mx-auto">
+    return (<div className="mx-auto max-w-[620px] mobile-landscape:px-[40px] mobile-portrait:px-[16px]">
         <h1 className="text-2xl font-bold mb-[16px]"><a href={`/entry/${issue.id}`}>{issue.title}</a></h1>
         <div className="mb-[16px]">
             <time className="text-xs text-gray-500" dateTime={issue.pubDate}>{toJST(issue.pubDate)}</time>

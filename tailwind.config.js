@@ -4,9 +4,10 @@ module.exports = {
   darkMode: "media",
   theme: {
     screens: {
-      'mobile-portrait': { max: '479px' },
+      // Need to sort in order of size
+      'tablet': { max: '991px' },
       'mobile-landscape': { max: '767px' },
-      'tablet': { max: '991px' }
+      'mobile-portrait': { max: '479px' },
     },
     fontSize: {
       'xs': ['12px', { lineHeight: '18px' }],
