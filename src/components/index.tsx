@@ -1,6 +1,7 @@
 import React from "react";
 import {Issue} from "../domains/issue";
 import {Site} from "../types";
+import Header from "../components/header"
 
 // FIXME: Site is domain...?
 type Props = {
@@ -10,6 +11,7 @@ type Props = {
 
 export default function ({ issues, site }: Props) {
     return <div>
+        <Header />
         <h1>Hello World</h1>
         {issues.map((issue, idx) => <div key={idx}>
             <h3>
