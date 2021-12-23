@@ -4,7 +4,7 @@ type Props = {};
 export default function ({}: Props) {
     return (<div className="sticky top-0 w-full flex-none duration-500 bg-white/95">
         <div className="max-w-8xl mx-auto">
-            <div className="py-4 border-b border-gray-900/10 lg:px-8 px-4">
+            <div className="py-4 lg:px-8 px-4">
                 <div className="relative flex items-center">
                     <a className="mr-3 flex-none w-auto mobile-landscape:w-[2.0625rem] overflow-hidden" href="/">
                         <svg className="text-gray-900 dark:text-white w-auto h-5" viewBox="0 0 128 20" fill="none" xmlns="http://www.w3.org/2000/svg">
