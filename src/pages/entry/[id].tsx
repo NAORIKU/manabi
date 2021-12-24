@@ -6,13 +6,7 @@ import {toHTML} from "../index";
 import {NotFoundError} from "../../errors";
 import {getIssue} from "../../infras/get_issue";
 
-export const renderEntry = async (issueId: number, config: Config): Promise<string> => {
-    const issue = await getIssue(issueId, config.github);
-    if (issue === null) {
-        throw new NotFoundError();
-    }
-    const content = ReactDOMServer.renderToString(React.createElement(Entry, { issue, site: config.site }));
-    return toHTML({ site: config.site, content: content, additionalHead: `<style>
+const syntaxStyles = `<style>
 /*!
  * GitHub Dark v0.5.0
  * Copyright (c) 2012 - 2017 GitHub, Inc.
@@ -142,7 +136,14 @@ export const renderEntry = async (issueId: number, config: Config): Promise<stri
   text-decoration: underline;
   color: #79b8ff;
 }
-      
-</style>` });
+</style>`;
+
+export const renderEntry = async (issueId: number, config: Config): Promise<string> => {
+    const issue = await getIssue(issueId, config.github);
+    if (issue === null) {
+        throw new NotFoundError();
+    }
+    const content = ReactDOMServer.renderToString(React.createElement(Entry, { issue, site: config.site }));
+    return toHTML({ site: config.site, content: content, additionalHead: syntaxStyles });
 };
 
