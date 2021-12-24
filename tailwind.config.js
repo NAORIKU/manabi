@@ -83,9 +83,5 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [
-    require("@tailwindcss/typography")({
-      className: "markdown",
-    }),
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };

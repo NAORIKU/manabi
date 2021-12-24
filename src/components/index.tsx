@@ -20,7 +20,6 @@ export default function ({ issues, site }: Props) {
                         <span className="h-full inline-block">
                             <img className="absolute inset-0 object-cover object-center w-full h-full"
                                  src="https://source.unsplash.com/iIrB37J5yfA"
-                                 onLoad={() => console.log("DEBUG", "HAKASHUN")}
                             />
                         </span>
                     </span>

@@ -14,7 +14,7 @@ export default function ({issue}: Props) {
             <div className="mb-[16px]">
                 <time className="text-xs text-gray-500" dateTime={issue.pubDate}>{toJST(issue.pubDate)}</time>
             </div>
-            <article className="markdown mobile-portrait:markdown-sm" dangerouslySetInnerHTML={html} />
+            <article className="prose mobile-portrait:prose-sm" dangerouslySetInnerHTML={html} />
         </div>
     </div>)
 
