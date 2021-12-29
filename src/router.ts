@@ -3,8 +3,10 @@ import { Config, ResponseInfo } from "./types";
 import { NotFoundError } from "./errors";
 import { renderTop } from "./pages/top";
 import { renderEntry } from "./pages/entry/[id]";
+import { renderFeed } from "./pages/feed";
+import { renderRobots } from "./pages/robots";
 
-type RenderType = "index" | "entry" | "";
+type RenderType = "index" | "entry" | "feed" | "robots" | "";
 
 /**
  * Return text and status for response.
@@ -33,6 +35,18 @@ const handleRequest = async (
           throw new NotFoundError(`IssueId: ${pathname} is not found`);
         }
         response = await renderEntry(issueId, config);
+        break;
+      //
+      //
+      case "feed":
+        contentType = "application/xml";
+        response = await renderFeed(config);
+        break;
+      //
+      //
+      case "robots":
+        contentType = "text/plain";
+        response = renderRobots();
         break;
       //
       //

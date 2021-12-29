@@ -1,6 +1,8 @@
 export interface Site {
   title: string;
   lastBuildDate: string;
+  description: string;
+  siteURL: string;
 }
 
 export interface GitHub {
