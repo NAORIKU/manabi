@@ -69,6 +69,12 @@ const getRenderType = (pathname: string): RenderType => {
   if (pathname.startsWith("/entry")) {
     return "entry";
   }
+  if (pathname === "/feed" || pathname === "/feed.xml") {
+    return "feed";
+  }
+  if (pathname === "/robots.txt") {
+    return "robots";
+  }
   return "";
 };
 
