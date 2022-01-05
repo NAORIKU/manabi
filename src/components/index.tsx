@@ -12,7 +12,7 @@ type Props = {
 export default function ({ issues, site }: Props) {
     return <div>
         <Header />
-        <div className="mx-auto max-w-[1024px] mt-[24px] mobile-landscape:mt-[0px] mobile-portrait:mt-[16px] px-[40px] mobile-landscape:px-[0px]">
+        <div className="mx-auto max-w-[1024px] mt-[24px] mobile-landscape:mt-[0px] px-[40px] mobile-landscape:px-[0px]">
             <div className="grid grid-cols-2 mobile-landscape:grid-cols-1 gap-[2rem] mobile-landscape:gap-0">
                 <div className="-skew-x-[10deg] px-[50px] mobile-landscape:px-[0px] mobile-landscape:-skew-x-0 mobile-landscape:h-[240px]">
                     <span className="relative block bg-white overflow-hidden w-full h-full">
