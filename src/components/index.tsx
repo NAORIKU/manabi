@@ -12,19 +12,19 @@ type Props = {
 export default function ({ issues, site }: Props) {
     return <div>
         <Header />
-        <div className="mx-auto max-w-[1024px] mt-[24px] mobile-portrait:mt-[16px] px-[40px] mobile-portrait:px-[16px]">
-            <div className="grid grid-cols-2 mobile-landscape:grid-cols-1 gap-[5rem] mobile-landscape:gap-0">
-                <div className="-skew-x-[8deg] mobile-landscape:-skew-x-0 mobile-landscape:h-[200px]">
+        <div className="mx-auto max-w-[1024px] mt-[24px] mobile-landscape:mt-[0px] mobile-portrait:mt-[16px] px-[40px] mobile-landscape:px-[0px]">
+            <div className="grid grid-cols-2 mobile-landscape:grid-cols-1 gap-[2rem] mobile-landscape:gap-0">
+                <div className="-skew-x-[10deg] px-[50px] mobile-landscape:px-[0px] mobile-landscape:-skew-x-0 mobile-landscape:h-[240px]">
                     <span className="relative block bg-white overflow-hidden w-full h-full">
                         <img className="absolute inset-0 object-cover object-center w-full h-full blur-[42px] scale-150" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgEASABIAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAAPAAoDAREAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9yPAP/BX/APZK8WS6JaeLZfiL8Ipdb8PW2rwax498C6rJ4OGovaQXF9olv4n8NnWra5m055mQ308Gn6ddLESt1DNNBA/m5dxFlGZU70sbQp1or97hq9SNKtSd7O8ZuKnG+04OUWmr2b5V6eY5DmmW1FGthK06UnaliaNOVSjU0vZSgm4yS3hJJpp2uld+uD/gp5+wiwDL+0N4ddWAKunhvx86Op5DI6eEyrqw5VlJVgQQSCDXpfXcEtHi8Kn2eIopr1XOed9UxT1WFxLXdYes0/T3D/O31n9o/wCJ3iaSJ/Efi3W7+xtbS7tdMsLK6TRtPtDcpPNALLSdKgs9G061h1GSO6ktbDS7NJlUp8kjLNB5eGyfAYV2oYWhCTXvyUE5Stp79SXNUntZc05adlodeJzPG4q3tsVWmov3U5tRjd392nHlhHv7sY7vqOX9p744W6i3g+J/xBjhgAhhRPFerKiRRDZGir9uOFVFAUZOAAM0f2Llb1eX4Bt6tvBYZtt7tt07v1Y1m+ZpJLMccktEliq6SS0SS9roktkA/9k=" />
                         <span className="h-full inline-block">
-                            <img className="scale-150 skew-x-[8deg] mobile-landscape:skew-x-0 absolute inset-0 object-cover object-center w-full h-full"
+                            <img className="scale-150 skew-x-[10deg] mobile-landscape:skew-x-0 absolute inset-0 object-cover object-center w-full h-full"
                                  src="https://source.unsplash.com/iIrB37J5yfA"
                             />
                         </span>
                     </span>
                 </div>
-                <div className="my-[64px] mobile-landscape:my-[48px]">
+                <div className="my-[64px] mobile-landscape:my-[48px] mobile-landscape:px-[40px] mobile-portrait:px-[16px]">
                     <h1 className="mb-[16px]">
                         <svg height="40" viewBox="0 0 119 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18.8262 0.188935L15.3481 19.6221H10.3517L6.8735 8.98785L4.9964 19.6221H0L3.50576 0.188935H8.64018L12.0631 10.1215L13.8574 0.188935H18.8262Z" fill="#002844"/>
@@ -36,7 +36,7 @@ export default function ({ issues, site }: Props) {
                             <path d="M113.866 18.2186C112.412 19.4062 110.351 20 107.682 20C105.014 20 103.164 19.3972 102.134 18.1916C101.398 17.3639 101.03 16.2213 101.03 14.7638C101.03 14.1161 101.103 13.4053 101.25 12.6316L103.486 0.188935H108.455L106.219 12.5236C106.146 12.9735 106.109 13.4413 106.109 13.9271C106.109 15.1867 106.882 15.8165 108.428 15.8165C109.348 15.8165 110.084 15.5825 110.636 15.1147C111.188 14.6469 111.574 13.7832 111.795 12.5236L114.031 0.188935H119L116.764 12.6316C116.304 15.1507 115.338 17.013 113.866 18.2186Z" fill="#002844"/>
                         </svg>
                     </h1>
-                    <p className="mb-[24px]">I'm NAORIKU — Engineer from Japan.</p>
+                    <p className="mb-[36px]">I'm NAORIKU — Engineer from Japan.</p>
                     <h2 className="mb-[8px]">Featured Posts</h2>
                     {issues.map((issue, idx) => <div key={idx} className="mb-[16px]">
                         <a href={`/entry/${issue.id}`}>
