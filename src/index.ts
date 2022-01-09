@@ -15,7 +15,7 @@ const getConfig = (): Config => {
       title: "manabi",
       description: "Today I Learned for my children.",
       lastBuildDate,
-      siteURL: "https://manabi.naoriku.dev/",
+      siteURL: "https://manabi.naoriku.dev",
     },
     github: {
       accessToken,
