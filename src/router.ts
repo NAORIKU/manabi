@@ -2,11 +2,12 @@ import path from "path";
 import { Config, ResponseInfo } from "./types";
 import { NotFoundError } from "./errors";
 import { renderTop } from "./pages/top";
+import { renderArchive } from "./pages/archive";
 import { renderEntry } from "./pages/entry/[id]";
 import { renderFeed } from "./pages/feed";
 import { renderRobots } from "./pages/robots";
 
-type RenderType = "index" | "entry" | "feed" | "robots" | "";
+type RenderType = "index" | "entry" | "archive" | "feed" | "robots" | "";
 
 /**
  * Return text and status for response.
@@ -25,6 +26,12 @@ const handleRequest = async (
       case "index":
         contentType = "text/html";
         response = await renderTop(config);
+        break;
+      //
+      //
+      case "archive":
+        contentType = "text/html";
+        response = await renderArchive(config);
         break;
       //
       //
@@ -65,6 +72,9 @@ const handleRequest = async (
 const getRenderType = (pathname: string): RenderType => {
   if (pathname === "/") {
     return "index";
+  }
+  if (pathname === "/blog") {
+    return "archive";
   }
   if (pathname.startsWith("/entry")) {
     return "entry";

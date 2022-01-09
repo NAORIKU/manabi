@@ -5,7 +5,8 @@ account_id = "aae2fcb83b85225f854e7fc4c1620a25"
 compatibility_date = "2021-11-30"
 
 [build]
-command = "npm install && npm run build"
+# command = "npm install && npm run build"
+command = "npm run build"
 watch_dir = "src"
 [build.upload]
 format = "service-worker"

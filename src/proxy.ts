@@ -35,9 +35,9 @@ export async function handleRequest(
       status,
       headers: { "content-type": contentType },
     });
-  } catch (error) {
+  } catch (error: any) {
     // FIXME: Render Error Styling Pages
-    return new Response(error.message, {
+    return new Response(error?.message, {
       status: 500,
       headers: { "content-type": "text/html" },
     });

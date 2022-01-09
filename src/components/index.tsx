@@ -40,7 +40,7 @@ export default function ({ issues, site }: Props) {
                     <h2 className="mb-[8px]">Featured Posts</h2>
                     {issues.map((issue, idx) => <div key={idx} className="mb-[16px]">
                         <a href={`/entry/${issue.id}`}>
-                            <h3 className="text-lg font-bold underline">
+                            <h3 className="text-lg font-bold underline mb-[1px]">
                                 {issue.title}
                             </h3>
                             <p className="truncate">{issue.bodyText}</p>
