@@ -4,7 +4,7 @@ const css = require("../../styles/tailwind.css").toString();
 interface ToHTMLParams {
   site: Site;
   content: string;
-  title?: string,
+  title?: string;
   additionalHead?: string;
 }
 

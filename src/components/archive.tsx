@@ -1,6 +1,7 @@
 import React from "react";
 import {Issue} from "../domains/issue";
 import Header from "../components/header"
+import Footer from "../components/footer";
 
 type Props = {
     issues: Issue[];
@@ -29,6 +30,7 @@ export default function ({issues}: Props) {
                 })}
             </div>
         </div>
+        <Footer className="max-w-[624px]" />
     </div>)
 
     function toJST(timetext: string): string {

@@ -2,6 +2,7 @@ import React from "react";
 import {Issue} from "../domains/issue";
 import {Site} from "../types";
 import Header from "../components/header"
+import Footer from "../components/footer"
 
 // FIXME: Site is domain...?
 type Props = {
@@ -50,5 +51,6 @@ export default function ({ issues, site }: Props) {
             </div>
 
         </div>
+        <Footer className="max-w-[1024px]" />
     </div>
 }
