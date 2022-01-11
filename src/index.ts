@@ -21,7 +21,7 @@ const getConfig = (): Config => {
       accessToken,
       repository: "NAORIKU/manabi",
       author: "NAORIKU",
-      label: "public",
+      label: "published",
     },
   };
 };

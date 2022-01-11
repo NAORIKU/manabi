@@ -7,7 +7,8 @@ export const getIssues = async (github: GitHub): Promise<Issue[]> => {
   const issues = [];
   const page: PageInfo = { endCursor: null, hasNextPage: true };
 
-  let q = `repo:${github.repository} author:${github.author} state:open`;
+  // https://docs.github.com/en/graphql/reference/objects#issue
+  let q = `repo:${github.repository} author:${github.author} state:closed`;
   if (github.label) {
     q += ` label:"${github.label}"`;
   }

@@ -1,5 +1,6 @@
 import { IssueNode } from "../types";
 
+// https://docs.github.com/en/graphql/reference/objects#issue
 export interface Issue {
   id: number;
   title: string;
