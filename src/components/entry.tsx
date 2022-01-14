@@ -22,6 +22,6 @@ export default function ({issue}: Props) {
 
     function toJST(timetext: string): string {
         const target = new Date(new Date(timetext).getTime() + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000));
-        return target.getFullYear() + "-" + (target.getMonth() + 1) + "-" + target.getDate() + " " + target.getHours() + ":" + target.getMinutes() + ":" + target.getSeconds();
+        return target.getFullYear() + "-" + (target.getMonth() + 1) + "-" + target.getDate() + " " + `0${target.getHours()}`.slice(-2) + ":" + `0${target.getMinutes()}`.slice(-2) + ":" + `0${target.getSeconds()}`.slice(-2);
     }
 }
